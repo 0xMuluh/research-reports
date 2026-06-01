@@ -127,47 +127,147 @@ main.container {
   color: var(--accent);
 }
 
-/* Search and Controls */
-.controls {
-  margin: 32px 0 16px 0;
-  background: #ffffff;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 24px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+/* Header Search Bar */
+.header-search {
+  position: relative;
+  width: 100%;
+  max-width: 280px;
+  margin: 0 16px;
 }
 
-.control-row {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-#q {
-  flex: 1;
-  min-width: 280px;
-  padding: 12px 16px;
-  border-radius: 10px;
+.header-search input {
+  width: 100%;
+  padding: 8px 16px 8px 36px;
+  border-radius: 20px;
   border: 1px solid var(--border);
-  background: #f8fafc;
-  font-size: 15px;
+  background: #f1f5f9;
+  font-size: 14px;
   font-family: var(--font);
   color: #0f172a;
   outline: none;
   transition: all 0.2s ease;
 }
 
-#q:focus {
+.header-search input:focus {
   background: #ffffff;
   border-color: var(--accent);
   box-shadow: var(--focus);
 }
 
+.header-search .search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+.header-search .search-icon svg {
+  width: 14px;
+  height: 14px;
+  stroke: var(--muted);
+}
+
+/* Filter Section & Collapsible Panel */
+.filter-section {
+  margin: 24px 0 16px 0;
+}
+
+.filter-summary-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 0;
+}
+
 .counts {
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--muted);
+}
+
+.toggle-filters-btn {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  color: #475569;
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+}
+
+.toggle-filters-btn:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  color: #0f172a;
+}
+
+.toggle-filters-btn.active {
+  background: var(--accent-light);
+  border-color: var(--accent);
+  color: #0c8382;
+}
+
+.icon-filter {
+  width: 14px;
+  height: 14px;
+  stroke-width: 2.5;
+}
+
+.filter-panel {
+  max-height: 200px;
+  opacity: 1;
+  overflow: hidden;
+  transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease, padding 0.3s ease, margin 0.3s ease, border-color 0.3s ease;
+  margin-top: 16px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+}
+
+.filter-panel.collapsed {
+  max-height: 0;
+  opacity: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  border-color: transparent;
+  box-shadow: none;
+  pointer-events: none;
+}
+
+.filter-panel-inner {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.counts-detail {
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 500;
+  margin-left: auto;
+  padding-left: 16px;
+  border-left: 1px solid var(--border);
 }
 
 .select-filter {
@@ -195,15 +295,7 @@ main.container {
   box-shadow: var(--focus);
 }
 
-.filter-row {
-  margin-top: 20px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-  border-top: 1px solid #f1f5f9;
-  padding-top: 16px;
-}
+/* Filter row class removed as filters are grouped in collapsible panel */
 
 .filter-label {
   font-size: 13px;
@@ -531,12 +623,33 @@ main.container {
   margin: -1px;
 }
 
+@media (max-width: 900px) {
+  .header-inner {
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+    padding: 8px 0;
+  }
+  .header-search {
+    max-width: 100%;
+    margin: 0;
+    order: 2;
+  }
+  .top-nav {
+    justify-content: center;
+    order: 3;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .brand {
+    justify-content: center;
+    order: 1;
+  }
+}
+
 @media (max-width: 768px) {
   .reports {
     grid-template-columns: 1fr;
-  }
-  .controls {
-    padding: 16px;
   }
 }
 

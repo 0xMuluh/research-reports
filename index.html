@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Research Reports — Data Science Group</title>
   <meta name="description" content="Hosted research reports from the Data Science group. Explore public and protected research, publications, and study outcomes in data science, metabolomics, and microbiome research." />
-  <link rel="stylesheet" href="reports.css?v=12" />
+  <link rel="stylesheet" href="reports.css?v=13" />
 </head>
 <body>
   <header class="site-header" role="banner">
@@ -15,6 +15,14 @@
         <span class="brand-divider" aria-hidden="true"></span>
         <span class="brand-text">Research Reports</span>
       </a>
+
+      <div class="header-search">
+        <label for="q" class="visually-hidden">Search reports</label>
+        <span class="search-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </span>
+        <input id="q" type="search" placeholder="Search reports..." aria-label="Search reports" />
+      </div>
 
       <nav aria-label="Primary" class="top-nav">
         <a href="https://datascience.utu.fi/">Home</a>
@@ -29,25 +37,35 @@
 
   <main class="container" id="app" role="main">
     <h1 class="visually-hidden">Research Reports — Data Science Group, University of Turku</h1>
-    <section class="controls" aria-label="Search and filters">
-      <div class="control-row">
-        <label for="q" class="visually-hidden">Search reports</label>
-        <input id="q" type="search" placeholder="Search by title, author, tag…" aria-label="Search reports" />
-        
-        <label for="year-filter" class="visually-hidden">Filter by year</label>
-        <select id="year-filter" aria-label="Filter by year" class="select-filter">
-          <option value="all">All Years</option>
-        </select>
-
+    
+    <section class="filter-section" aria-label="Filters">
+      <div class="filter-summary-row">
         <div id="counts" class="counts" aria-live="polite"></div>
+        <button id="filter-toggle-btn" class="toggle-filters-btn" aria-expanded="false" aria-controls="filter-panel">
+          <svg class="icon-filter" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+          Filters
+        </button>
       </div>
 
-      <div class="filter-row" role="toolbar" aria-label="Filters">
-        <span class="filter-label">Filter:</span>
-        <div class="filters" role="group" aria-label="Report filters">
-          <button class="filter-btn active" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="protected">Protected</button>
-          <button class="filter-btn" data-filter="public">Public</button>
+      <div id="filter-panel" class="filter-panel collapsed">
+        <div class="filter-panel-inner">
+          <div class="filter-group">
+            <span class="filter-label">Access:</span>
+            <div class="filters" role="group" aria-label="Report filters">
+              <button class="filter-btn active" data-filter="all">All</button>
+              <button class="filter-btn" data-filter="protected">Protected</button>
+              <button class="filter-btn" data-filter="public">Public</button>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <span class="filter-label">Year:</span>
+            <select id="year-filter" aria-label="Filter by year" class="select-filter">
+              <option value="all">All Years</option>
+            </select>
+          </div>
+
+          <div id="counts-detail" class="counts-detail" aria-live="polite"></div>
         </div>
       </div>
     </section>
@@ -62,6 +80,6 @@
     </div>
   </footer>
 
-  <script src="reports.js?v=12" defer></script>
+  <script src="reports.js?v=13" defer></script>
 </body>
 </html>

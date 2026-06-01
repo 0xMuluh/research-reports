@@ -10,6 +10,8 @@
   const filterButtons = Array.from(document.querySelectorAll('.filter-btn'));
   const yearFilterEl = document.getElementById('year-filter');
   const paginationEl = document.getElementById('pagination');
+  const toggleBtn = document.getElementById('filter-toggle-btn');
+  const filterPanel = document.getElementById('filter-panel');
 
   yearEl.textContent = new Date().getFullYear();
 
@@ -264,7 +266,13 @@
     const visible = filtered.length;
     const protectedCount = reports.filter(r => r.draft !== true && r.visibility === 'Protected').length;
     const publicCount = reports.filter(r => r.draft !== true && r.visibility === 'Public').length;
-    countsEl.textContent = `${visible} of ${total} shown · Protected: ${protectedCount} · Public: ${publicCount}`;
+    
+    countsEl.textContent = visible === total ? `Showing ${total} reports` : `Showing ${visible} of ${total} reports`;
+
+    const detailEl = document.getElementById('counts-detail');
+    if (detailEl) {
+      detailEl.textContent = `Protected: ${protectedCount} · Public: ${publicCount}`;
+    }
   }
 
   qInput.addEventListener('input', (e) => {
@@ -286,6 +294,15 @@
       setActiveFilter(btn.dataset.filter);
     });
   });
+
+  if (toggleBtn && filterPanel) {
+    toggleBtn.addEventListener('click', () => {
+      const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+      toggleBtn.setAttribute('aria-expanded', !isExpanded);
+      filterPanel.classList.toggle('collapsed');
+      toggleBtn.classList.toggle('active');
+    });
+  }
 
   function init() {
     fetch('./reports.json')
