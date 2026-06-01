@@ -1,0 +1,45 @@
+[
+  {
+    "key": "husna",
+    "title": "Maternal Prenatal Diet & Child Metabolomics",
+    "summary": "Association analysis between maternal prenatal diet exposures in early/late pregnancy and child metabolite outcomes across infancy and childhood.",
+    "status": "Private collaboration",
+    "visibility": "Protected",
+    "updated": "2026-04-22",
+    "area": "Maternal & Child Health",
+    "authors": ["Muluh G", "Kaya Kacar H", "Mongad DS", "Laitinen K", "Lahti L"],
+    "tags": ["metabolomics", "pregnancy", "diet", "longitudinal"],
+    "reportUrl": "/reports/husna/",
+    "githubUrl": "https://github.com/0xMuluh/fopp-husna",
+    "manuscript": { "label": "Manuscript draft" }
+  },
+  {
+    "key": "lotta",
+    "title": "Child Diet & Metabolite Outcomes",
+    "summary": "Concurrent, prospective, and repeated-measures association analysis between child diet exposures and child metabolite outcomes across childhood.",
+    "status": "Private collaboration",
+    "visibility": "Protected",
+    "updated": "2026-04-10",
+    "area": "Child Health",
+    "authors": ["Muluh G", "Saros L", "Mongad DS", "Laitinen K", "Lahti L"],
+    "tags": ["diet", "metabolomics", "longitudinal", "childhood"],
+    "reportUrl": "/reports/lotta/",
+    "githubUrl": "https://github.com/0xMuluh/fopp-lotta",
+    "manuscript": null
+  },
+  {
+    "key": "example-publication",
+    "title": "Example Published Report",
+    "summary": "A reference template demonstrating a fully public, published report with DOI, open code, and reproducible figures.",
+    "status": "Published",
+    "visibility": "Public",
+    "updated": "2025-11-03",
+    "area": "Open Methods",
+    "authors": ["Open Research Labs"],
+    "tags": ["template", "reproducibility", "open-access"],
+    "reportUrl": "/reports/example-publication/",
+    "githubUrl": "https://github.com/openresearchlabs/example-report",
+    "manuscript": { "label": "Published article (DOI)", "url": "https://doi.org/10.0000/example" },
+    "draft": true
+  }
+]
