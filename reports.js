@@ -288,7 +288,7 @@
   });
 
   function init() {
-    fetch('./reports.json', {cache: 'no-store'})
+    fetch('./reports.json')
       .then(resp => {
         if (!resp.ok) throw new Error('Failed to load reports.json');
         return resp.json();
