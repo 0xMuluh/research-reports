@@ -28,6 +28,19 @@
     "manuscript": null
   },
   {
+    "key": "enni",
+    "title": "Oat-Rich Diet & Cardiometabolic Risk",
+    "summary": "Oat-rich low-gluten diet modulates plasma short-chain fatty acids without significant changes in fecal microbiome or inflammatory markers – a randomized clinical trial in people with cardiometabolic risk",
+    "visibility": "Public",
+    "updated": "2026-06-01",
+    "area": "Cardiometabolic Health",
+    "authors": ["Muluh G", "Mannila E", "Nuotio P", "Koistinen V", "Erawijantari P", "Salminen S", "Linderborg KM", "Lahti L"],
+    "tags": ["clinical-trial", "diet", "microbiome", "cardiometabolic"],
+    "reportUrl": "/reports/enni/",
+    "githubUrl": "https://github.com/openresearchlabs/OGB_project",
+    "manuscript": null
+  },
+  {
     "key": "example-publication",
     "title": "Example Published Report",
     "summary": "A reference template demonstrating a fully public, published report with DOI, open code, and reproducible figures.",
