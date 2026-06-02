@@ -424,15 +424,37 @@ main.container {
 
 .citation-authors {
   display: block;
-  font-weight: 600;
-  color: #334155;
-  font-size: 14px;
-  margin-top: 4px;
+  font-weight: 400;
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 12px;
+  position: relative;
+  padding-left: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: help;
+  transition: all 0.25s ease;
+}
+
+.citation-authors .icon-users {
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 14px;
+  height: 14px;
+  stroke: var(--muted);
+  stroke-width: 2px;
+}
+
+.citation-authors:hover {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
 }
 
 .citation-title {
-  display: block;
-  margin-bottom: 6px;
+  display: inline;
 }
 
 .citation-title .report-link {
