@@ -104,22 +104,25 @@
     const citation = document.createElement('div');
     citation.className = 'citation';
 
-    const authorsStr = (r.authors || []).join(', ');
-    const authorsSpan = document.createElement('span');
-    authorsSpan.className = 'citation-authors';
-    authorsSpan.textContent = authorsStr ? authorsStr + '. ' : '';
-    citation.appendChild(authorsSpan);
-
+    // Title first (publication-style), then authors on the next line
     const titleSpan = document.createElement('span');
     titleSpan.className = 'citation-title';
     const a = document.createElement('a');
     a.href = r.reportUrl || '#';
     a.textContent = r.title || r.key;
     a.className = 'report-link';
-    a.setAttribute('aria-label', `${r.title} — open report`);
+    // use a simple hyphen in aria label (avoid em dash)
+    a.setAttribute('aria-label', `${r.title} - open report`);
     titleSpan.appendChild(a);
-    titleSpan.appendChild(document.createTextNode('. '));
+    titleSpan.appendChild(document.createTextNode('.'));
     citation.appendChild(titleSpan);
+
+    const authorsStr = (r.authors || []).join(', ');
+    const authorsSpan = document.createElement('span');
+    authorsSpan.className = 'citation-authors';
+    authorsSpan.textContent = authorsStr ? authorsStr + '.' : '';
+    // place authors after title on their own line
+    citation.appendChild(authorsSpan);
 
     const year = r.updated ? r.updated.split('-')[0] : '';
     const dateSpan = document.createElement('span');

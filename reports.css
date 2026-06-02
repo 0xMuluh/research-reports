@@ -423,8 +423,16 @@ main.container {
 }
 
 .citation-authors {
+  display: block;
   font-weight: 600;
   color: #334155;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.citation-title {
+  display: block;
+  margin-bottom: 6px;
 }
 
 .citation-title .report-link {
