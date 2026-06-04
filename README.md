@@ -28,7 +28,7 @@ To add a new report to the dashboard, open [reports.json](reports.json) and appe
     "visibility": "Protected",
     "updated": "2026-04-22",
     "area": "Maternal & Child Health",
-    "authors": ["Muluh G", "Kaya Kacar H", "Mongad DS", "Laitinen K", "Lahti L"],
+    "authors": ["Muluh G", "Kaya Kacar H", "Mongad D", "Laitinen K", "Lahti L"],
     "tags": ["metabolomics", "pregnancy", "diet", "longitudinal"],
     "reportUrl": "/reports/example-report/",
     "githubUrl": "https://github.com/0xMuluh/fopp-example",
