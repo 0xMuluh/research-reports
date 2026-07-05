@@ -3,7 +3,7 @@
     "key": "husna",
     "title": "Maternal Prenatal Diet & Child Metabolomics",
     "summary": "Association analysis between maternal prenatal diet exposures in early/late pregnancy and child metabolite outcomes across infancy and childhood.",
-    "status": "Private collaboration",
+    "status": "Unpublished",
     "visibility": "Protected",
     "updated": "2026-04-22",
     "area": "Maternal & Child Health",
@@ -17,7 +17,7 @@
     "key": "lotta",
     "title": "Child Diet & Metabolite Outcomes",
     "summary": "Concurrent, prospective, and repeated-measures association analysis between child diet exposures and child metabolite outcomes across childhood.",
-    "status": "Private collaboration",
+    "status": "Unpublished",
     "visibility": "Protected",
     "updated": "2026-04-10",
     "area": "Child Health",
@@ -31,7 +31,7 @@
     "key": "veera",
     "title": "Early-Life Circulating Metabolites & Childhood Neurodevelopment",
     "summary": "Association analysis between early-life circulating metabolomic profiles (at 6 months, 1 year, and 2 years of age) and childhood neurodevelopmental outcomes at 2 years of age.",
-    "status": "Private collaboration",
+    "status": "Unpublished",
     "visibility": "Protected",
     "updated": "2026-06-04",
     "area": "Maternal & Child Health",
@@ -72,5 +72,19 @@
     "githubUrl": "https://github.com/openresearchlabs/example-report",
     "manuscript": { "label": "Published article (DOI)", "url": "https://doi.org/10.0000/example" },
     "draft": true
+  },
+  {
+    "key": "varmikro",
+    "title": "Gut Microbiome, Inflammation & Protein Intervention",
+    "summary": "Clinical trial evaluating the impact of hydrolyzed protein and probiotic interventions on gut microbiota composition, B/F ratio, and associations with systemic and local inflammatory biomarkers.",
+    "status": "Unpublished",
+    "visibility": "Protected",
+    "updated": "2026-07-05",
+    "area": "Microbiome & Nutrition",
+    "authors": ["Muluh G", "Bayal N", "Selenius O", "Kirsi L.", "Lahti L"],
+    "tags": ["microbiome", "clinical-trial", "probiotics", "protein", "inflammation", "longitudinal"],
+    "reportUrl": "/reports/otto/",
+    "githubUrl": "https://gitlab.utu.fi/vamipre/varmikro",
+    "manuscript": null
   }
 ]

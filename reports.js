@@ -93,11 +93,13 @@
     el.className = 'card';
     el.setAttribute('tabindex', '0');
 
-    // Access & Area Badges (Removed redundant status badge)
+    // Access, Status, & Area Badges
     const meta = document.createElement('div');
     meta.className = 'meta';
     const visibilityClass = (r.visibility || '').toLowerCase();
+    const statusClass = (r.status || '').toLowerCase().replace(/\s+/g, '-');
     meta.innerHTML = `<span class="visibility ${visibilityClass}" aria-hidden="true">${escapeHtml(r.visibility)}</span>
+                      <span class="status ${statusClass}" aria-hidden="true">${escapeHtml(r.status)}</span>
                       <span class="area" aria-hidden="true">${escapeHtml(r.area)}</span>`;
 
     // Publication-style citation
@@ -151,7 +153,7 @@
     actions.className = 'actions';
     const open = document.createElement('a');
     open.className = 'btn primary';
-    open.textContent = 'Open report →';
+    open.textContent = 'Open report';
     open.href = r.reportUrl || '#';
     open.setAttribute('role', 'button');
     actions.appendChild(open);
@@ -164,6 +166,25 @@
       gh.target = '_blank';
       gh.rel = 'noopener noreferrer';
       actions.appendChild(gh);
+    }
+
+    if (r.manuscript && r.manuscript.url) {
+      const ms = document.createElement('a');
+      ms.className = 'btn ghost';
+      
+      // Shorten label if it is too long to fit nicely in buttons
+      let labelText = r.manuscript.label || 'Manuscript';
+      if (labelText.toLowerCase().includes('doi')) {
+        labelText = 'DOI';
+      } else if (labelText.toLowerCase().includes('draft')) {
+        labelText = 'Draft';
+      }
+      ms.textContent = labelText;
+      ms.href = r.manuscript.url;
+      ms.target = '_blank';
+      ms.rel = 'noopener noreferrer';
+      ms.setAttribute('aria-label', r.manuscript.label || 'Manuscript link');
+      actions.appendChild(ms);
     }
 
     el.appendChild(meta);

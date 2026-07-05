@@ -384,7 +384,7 @@ main.container {
 }
 
 /* Colors for dynamic classes */
-.card span.status.private-collaboration {
+.card span.status.unpublished {
   background: #fffbeb;
   color: #d97706;
   border-color: #fef3c7;
