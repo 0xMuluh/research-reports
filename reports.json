@@ -42,6 +42,20 @@
     "manuscript": null
   },
   {
+    "key": "kati",
+    "title": "Maternal Gut Barrier Biomarkers & Gut Metagenomics",
+    "summary": "Association analysis between maternal serum biomarkers of gut barrier function, permeability, microbial translocation, and gut metagenomics across early and late pregnancy.",
+    "status": "Unpublished",
+    "visibility": "Protected",
+    "updated": "2026-08-31",
+    "area": "Maternal & Child Health",
+    "authors": ["Muluh G", "Mokkala K", "Mongad D", "Laitinen K", "Lahti L"],
+    "tags": ["microbiome", "metagenomics", "pregnancy", "gut-barrier", "endotoxemia", "inflammation", "longitudinal"],
+    "reportUrl": "/reports/kati/",
+    "githubUrl": "https://github.com/0xMuluh/fopp-kati",
+    "manuscript": null
+  },
+  {
     "key": "enni",
     "title": "Oat-Rich Diet & Cardiometabolic Risk",
     "summary": "Oat-rich low-gluten diet modulates plasma short-chain fatty acids without significant changes in fecal microbiome or inflammatory markers – a randomized clinical trial in people with cardiometabolic risk",
